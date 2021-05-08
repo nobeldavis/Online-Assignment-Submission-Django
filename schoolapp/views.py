@@ -273,6 +273,8 @@ def assignment_page(request):
         get_assignment = Teacher_Assignment_upload_File.objects.filter(course=get_course_name)
         # print(get_assignment)
 
+        
+
         get_submit_ass_fs_tt = Student_Submit_Assignment_pro.objects.filter(course=get_course_name)
         # print(get_submit_ass_fs_tt)
 

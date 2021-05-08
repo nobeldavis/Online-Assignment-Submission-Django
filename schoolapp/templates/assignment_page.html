@@ -7,7 +7,7 @@
 {% load get_dict %}
 
 
-<div class="example-print row container pt-5 ml-5 mr-5 pr-5">
+<div class="example-print row  pt-5 ml-5 mr-5 pr-5">
   <div class="example-screen col-3" style="backdrop-filter: blur(10px); background-color: rgba(14, 14, 14, 0.856); padding: 20px;">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">List of Student</a>
@@ -16,7 +16,7 @@
       <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Grade Students</a>
     </div>
   </div>
-  <div class="col-9">
+  <div class="col-7">
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" style="backdrop-filter: blur(88px); background-color:rgba(255, 255, 255, 0.445); padding: 20px;">
         {% if get_assignment %}
@@ -226,7 +226,8 @@
             <div class="col-md-8">
               
               <div class="card-body">
-                <h5 class="card-title">Student ID : {{get_submit_ass.Student_ID}} <span class="text-muted">({{get_submit_ass.course}})</span></h5>
+        
+                <h6 class="card-title">Student ID : {{get_submit_ass.Student_ID}} <span class="text-muted">({{get_submit_ass.course}})</span></h6>
                 <p><b>{{get_submit_ass.Assignment_name}}</b></p> <br>
                 <p>Submitted On : <b>{{get_submit_ass.date_now}}</b></p>
                 <a href="{{get_submit_ass.attachment}}" class="btn btn-info btn-sm" target="_blank"><small>View Assignment and Download</small></a>
