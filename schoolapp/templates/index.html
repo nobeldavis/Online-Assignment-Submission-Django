@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+
+{%block title%}{% endblock %}
+
+{%block body%}
+
+{% if messages %}
+{% for message in messages %}
+
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Well Done!</strong> {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{% endfor %}
+{% endif %}
+
+{% if request.session.Teacher_id %}
+
+<div class="container mt-5 col-lg-5 col-md-8" style="backdrop-filter: blur(88px); background-color:rgba(255, 255, 255, 0.445); padding: 20px;" >
+    <div style="padding: 20px; text-align: center;">
+    <h2 style="text-align: center">Welcome, {{request.session.Teacher_name}} Teachers</h2>
+
+    
+    <div class="card container bg-info" style="width: 18rem;">
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item pb-4.5">
+
+                <form action="/sir_course" method="POST">{% csrf_token %}
+                        <div class="form-group">
+                            <input type="hidden" name="teach_course_id" value="{{request.session.Teacher_id}}" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" class="btn btn-outline-info btn-sm">Go To Your Classroom</button>
+                    </form>
+
+            </li>
+
+        </ul>
+    </div>
+    
+
+
+</div>
+</div>
+
+
+
+
+{% elif request.session.Stu_id %}
+
+<div class="container mt-5 col-lg-5 col-md-8" style="backdrop-filter: blur(88px); background-color:rgba(255, 255, 255, 0.445); padding: 20px;" >
+    <div style="padding: 20px; text-align: center;">
+    <h2 style="text-align: center">Welcome, {{request.session.Stu_name}}!</h2>
+        <br>
+    
+    <div class="card container bg-info" style="width: 18rem;" >
+
+        <ul class="list-group list-group-flush" >
+            <li class="list-group-item pl-2.5 pb-4">
+
+                <form action="/stu_course" method="POST">{% csrf_token %}
+                        <div class="form-group" >
+                            <input type="hidden" name="stu_course_id" value="{{request.session.Stu_id}}" class="form-control" id="exampleInputPassword3">
+                        </div>
+                        <button type="submit" class="btn btn-outline-info btn-sm" >Go To Your Classroom</button>
+                    </form>
+                    
+            </li>
+
+        </ul>
+        
+    </div>
+    <br>
+    {% if get_assignmet_for_stu %}  
+        <p style="color: red;">You have Assignments to Submit</p>  
+    {% else %}
+        <p style="color: green;">You have no Assignments Due </p>
+    {% endif %}
+
+
+</div>
+</div>
+
+
+
+
+{% else %}
+<div class="container mt-5 col-lg-5 col-md-8" style="backdrop-filter: blur(88px); background-color:rgba(255, 255, 255, 0.445); padding: 20px;" >
+<div style="padding: 20px; text-align: center;">
+  <h1 class="display-4">Online Assignment Submission</h1>
+  <p class="lead">Welcome!</p>
+  <hr class="my-4">
+  <p>Got an Assignment to submit? Login Now!!!</p>
+  <a class="btn btn-success btn-lg btn-block" href="login" role="button">Login</a>
+</div>
+</div>
+
+{% endif %}
+
+
+{% endblock %}
