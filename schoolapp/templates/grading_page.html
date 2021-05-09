@@ -5,8 +5,8 @@
 
 {%block body%}
 
-<form class="container pt-5" action="/grading_submit" method="POST">{% csrf_token %}
-  <div class="mb-3">
+<form class="blur-background  pt-5" action="/grading_submit" method="POST">{% csrf_token %}
+  <div class="mb-3 col-lg-3">
     <label for="exampleInputEmail1" class="form-label">Grade</label>
     <input name="grade_field" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     <input name="grade_field_stu_id" value="{{stu_id_grade}}" type="hidden" class="form-control">
@@ -14,7 +14,7 @@
     <input name="grade_field_assignment_name" value="{{stu_ass_name_grade}}" type="hidden" class="form-control">
     <input name="out_grade_filed" value="{{stu_total_grade}}" type="hidden" class="form-control">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="ml-3 btn btn-primary">Submit Marks</button>
 </form>
 
 {% endblock %}

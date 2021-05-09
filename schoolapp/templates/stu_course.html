@@ -54,7 +54,7 @@
 
           {% endfor %}
           <p style="color: red;">Already Submitted Once</p>
-          <button type="submit" class="btn btn-primary btn-sm">Submit Again</button>
+          <button type="submit" class="btn btn-primary btn-sm">Submit</button>
         </form>
         {% else %}
         <form class="container mb-4" action="/submit_assignment" method="POST">{% csrf_token %}
