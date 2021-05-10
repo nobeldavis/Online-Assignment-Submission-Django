@@ -19,9 +19,9 @@
 {% endfor %}
 {% endif %}
 
-{% if request.session.Teacher_id %}
+{% if request.session.Teacher_id %} 
 
-<div class="container mt-5 col-lg-5 col-md-8" style="backdrop-filter: blur(88px); background-color:rgba(255, 255, 255, 0.445); padding: 20px;" >
+<div class="container mt-5 col-lg-5 col-md-8 blur-background" >
     <div style="padding: 20px; text-align: center;">
     <h2 style="text-align: center">Welcome, {{request.session.Teacher_name}} Teachers</h2>
 
@@ -53,7 +53,7 @@
 
 {% elif request.session.Stu_id %}
 
-<div class="container mt-5 col-lg-5 col-md-8" style="backdrop-filter: blur(88px); background-color:rgba(255, 255, 255, 0.445); padding: 20px;" >
+<div class="container mt-5 col-lg-5 col-md-8 blur-background">
     <div style="padding: 20px; text-align: center;">
     <h2 style="text-align: center">Welcome, {{request.session.Stu_name}}!</h2>
         <br>
