@@ -217,7 +217,7 @@
         <h3 style="text-align: center;"><b>Submitted Assignments</b></h3>
         {% for get_submit_ass in get_submit_ass_fs_tt %}
         
-        <div class="card mb-3 ml-5  mt-5" style="max-width: 640px;border-radius: 10px;">
+        <div class="card mb-3 ml-5  mt-3" style="max-width: 640px;border-radius: 10px;">
           
           <div class="row no-gutters">
             <div class="col-md-4">
@@ -225,25 +225,26 @@
             </div>
             <div class="col-md-8">
               
-              <div class="card-body">
+              <div class="card-body ">
         
                 <h6 class="card-title">Student ID : {{get_submit_ass.Student_ID}} <span class="text-muted">({{get_submit_ass.course}})</span></h6>
                 <p><b>{{get_submit_ass.Assignment_name}}</b></p> <br>
                 <p>Submitted On : <b>{{get_submit_ass.date_now}}</b></p>
-                <a href="{{get_submit_ass.attachment}}" class="btn btn-info btn-sm" target="_blank"><small>View Assignment and Download</small></a>
+                <div class="row ml-1">
+                  <a href="{{get_submit_ass.attachment}}" class="btn btn-info btn-sm" target="_blank"><small>View Assignment and Download</small></a>
 
 
-                <form class="pt-2" method="POST" action="/grading_page">{% csrf_token %}
-                  <input type="hidden" name="stu_id_grade" value="{{get_submit_ass.Student_ID}}">
-                  <input type="hidden" name="stu_course_grade" value="{{get_submit_ass.course}}">
-                  <input type="hidden" name="stu_total_grade" value="{{get_assignment12.Out_Of_Grade}}">
-                  {% for i in get_assignment %}
-                  <input type="hidden" name="stu_ass_name_grade" value="{{i.Assignment_name}}">
-                  {% endfor %}
+                  <form class="ml-3" method="POST" action="/grading_page">{% csrf_token %}
+                    <input type="hidden" name="stu_id_grade" value="{{get_submit_ass.Student_ID}}">
+                    <input type="hidden" name="stu_course_grade" value="{{get_submit_ass.course}}">
+                    <input type="hidden" name="stu_total_grade" value="{{get_assignment12.Out_Of_Grade}}">
+                    {% for i in get_assignment %}
+                    <input type="hidden" name="stu_ass_name_grade" value="{{i.Assignment_name}}">
+                    {% endfor %}
 
-                  <button class="btn  btn-md btn-success" type="submit"><small>Grade this Student</small></button>
-                </form>
-
+                    <button class="btn  btn-sm btn-success" type="submit"><small>Grade this Student</small></button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>

@@ -20,6 +20,16 @@
 
     <script type="text/javascript"></script>
     <style>
+      html{
+        box-sizing: border-box;
+      }
+      body{
+        margin: 0;
+        min-height: 0vh;
+      }
+      .shadowss {
+        box-shadow: 0px 40px 140px 2px;
+      } 
       @media print {
         .example-screen {
           display: none;
@@ -32,12 +42,16 @@
         backdrop-filter: blur(88px);
         background-color: rgba(255, 255, 255, 0.445);
         padding: 20px;
+        border-radius: 10px;
+        /* box-shadow: 0px 40px 150px 20px; */
       }
     </style>
   </head>
   <body
     style="
       background-image: url(https://www.wallpapertip.com/wmimgs/86-860796_kings-college.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
     "
   >
     <nav
