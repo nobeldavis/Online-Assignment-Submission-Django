@@ -1,152 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <title>{% block title %}{% endblock %}</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
 
-    <script type="text/javascript"></script>
-    <style>
-      html{
-        box-sizing: border-box;
+  <title>{% block title %}{% endblock %}</title>
+
+  <script type="text/javascript"></script>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    .shadowss {
+      box-shadow: 0px 40px 140px 2px;
+    }
+
+    @media print {
+      .example-screen {
+        display: none;
       }
-      body{
-        margin: 0;
-        min-height: 0vh;
+
+      .example-print {
+        display: block;
       }
-      .shadowss {
-        box-shadow: 0px 40px 140px 2px;
-      } 
-      @media print {
-        .example-screen {
-          display: none;
-        }
-        .example-print {
-          display: block;
-        }
-      }
-      .blur-background {
-        backdrop-filter: blur(88px);
-        background-color: rgba(255, 255, 255, 0.445);
-        padding: 20px;
+    }
+
+    .blur-background {
+      backdrop-filter: blur(88px);
+      background-color: rgba(255, 255, 255, 0.445);
+      padding: 20px;
+      border-radius: 10px;
+      /* box-shadow: 0px 40px 150px 20px; */
+    }
+
+      /* Quote Generator CSS */
+      .quote-container { 
+        
+        padding: 20px 30px;
         border-radius: 10px;
-        /* box-shadow: 0px 40px 150px 20px; */
+        background-color: rgba(255, 255, 255, 0.678);
+        
+
       }
-    </style>
-  </head>
-  <body
-    style="
+
+      .quote-text {
+        font-size: 2.0rem;
+        
+      }
+
+
+      .quote-author {
+        margin-top: 15px;
+        font-size: 1.7rem;
+        font-weight: 400;
+        font-style: italic;
+
+      }
+
+      .button-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .button-quote {
+        cursor: pointer;
+        font-size: 1.2rem;
+        height: 2.5rem;
+        border: none;
+        background: rgb(42, 42, 42);
+        color: white;
+        outline: none;
+        border-radius: 10px;
+        padding: 0.5rem 1.8rem;
+        box-shadow: 0 0.3rem rgba(42, 42, 42, 0.507);
+
+      }
+
+      .twitter-button {
+        color: rgb(6, 226, 255);
+      }
+
+      .instagram-button {
+        color: rgb(176, 6, 255);
+      }
+
+      button:hover {
+        filter: brightness(150%);
+
+      }
+
+      button:active {
+        transform: translate(0, 0.3rem);
+        box-shadow: 0 0.0rem white;
+      }
+
+
+
+      /* Media Query: Tablet or smaller */
+      @media screen and (max-width: 1000px) {
+        .quote-container {
+          margin: auto 30px;
+        }
+
+        .quote-text {
+          font-size: 1.8rem;
+        }
+
+        button {
+          font-size: 1.0rem;
+          height: 2.5rem;
+        }
+      }
+  </style>
+</head>
+
+<body style="
       background-image: url(https://www.wallpapertip.com/wmimgs/86-860796_kings-college.jpg);
       background-size: cover;
       background-repeat: no-repeat;
-    "
-  >
-    <nav
-      style="
+    ">
+  <nav style="
         background-color: rgba(14, 14, 14, 0.856);
         backdrop-filter: blur(10px);
         padding: 40px 40px;
-      "
-      class="navbar navbar-expand-lg navbar-dark"
-    >
-      <button class="btn btn-lg btn-outline-warning">
-        <a class="navbar-brand" href="/" style="font-size: 30px"
-          ><b>Assignment Management System</b></a
-        >
-      </button>
+      " class="navbar navbar-expand-lg navbar-dark">
+    <button class="btn btn-lg btn-outline-warning">
+      <a class="navbar-brand" href="/" style="font-size: 30px"><b>Assignment Management System</b></a>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"></ul>
 
-        <ul class="navbar-nav my-2 my-lg-0 mr-5">
-          {% if request.session.Teacher_id or request.session.Stu_id %}
+      <ul class="navbar-nav my-2 my-lg-0 mr-5">
+        {% if request.session.Teacher_id or request.session.Stu_id %}
 
-          <li class="nav-item dropdown active">
-            <button class="btn btn-warning">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown3"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                style="color: black"
-              >
-                {% if request.session.Teacher_id %} Class :
-                {{request.session.Teacher_name}} {% else %} Student :
-                {{request.session.Stu_name}} {% endif %}
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/profile">Profile</a>
+        <li class="nav-item dropdown active">
+          <button class="btn btn-warning">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="color: black">
+              {% if request.session.Teacher_id %} Class :
+              {{request.session.Teacher_name}} {% else %} Student :
+              {{request.session.Stu_name}} {% endif %}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/profile">Profile</a>
 
-                <!-- <a class="dropdown-item" href="/settings">Settings</a>-->
+              <!-- <a class="dropdown-item" href="/settings">Settings</a>-->
 
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/logout">Log Out</a>
-              </div>
-            </button>
-          </li>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/logout">Log Out</a>
+            </div>
+          </button>
+        </li>
 
-          {% else %}
+        {% else %}
 
-          <li class="nav-item active">
-            <button type="button" class="btn btn-warning">
-              <a
-                class="nav-link"
-                href="/login"
-                style="font-weight: bolder; color: rgb(0, 0, 0)"
-                >Login <span class="sr-only">(current)</span></a
-              >
-            </button>
-            <button
-              style="font-weight: bolder"
-              type="button"
-              class="btn btn-outline-warning"
-            >
-              <a class="nav-link" href="{% url 'admin:index' %}"
-                >Admin <span class="sr-only">(current)</span></a
-              >
-            </button>
-          </li>
+        <li class="nav-item active">
+          <button type="button" class="btn btn-warning">
+            <a class="nav-link" href="/login" style="font-weight: bolder; color: rgb(0, 0, 0)">Login <span
+                class="sr-only">(current)</span></a>
+          </button>
+          <button style="font-weight: bolder" type="button" class="btn btn-outline-warning">
+            <a class="nav-link" href="{% url 'admin:index' %}">Admin <span class="sr-only">(current)</span></a>
+          </button>
+        </li>
 
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
-    {% block body %}{% endblock %}
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  {% block body %}{% endblock %}
 
-    <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
 
-    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+  <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    -->
-  </body>
+  -->
+</body>
+
 </html>
