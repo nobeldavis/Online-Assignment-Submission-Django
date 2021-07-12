@@ -462,6 +462,16 @@ def deleteAssignments2(request):
     
     return redirect(f'stu_course')
 
+def deleteMarks(request):
+    if request.method == "POST": 
+        """ assign_id = request.POST.get('assign_id') """
+    
+        for n in range(100):
+            Mark_delete = Grade_Student(id=n)
+            Mark_delete.delete()
+    
+    return redirect(f'assignment_page')
+
 def postComments(request):
     if request.method == "POST":
         comment_ass = request.POST.get('comment_ass')

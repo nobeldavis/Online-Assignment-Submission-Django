@@ -24,6 +24,8 @@ urlpatterns = [
     path('postComments', views.postComments, name='postComments'),
     path('deleteAssignments', views.deleteAssignments, name='deleteAssignments'),
     path('deleteAssignments2', views.deleteAssignments2, name='deleteAssignments2'),
+    
+    path('deleteMarks', views.deleteMarks, name='deleteMarks'),
 
 
     path('update_change_password/93875995<str:pk>87438737/345', views.update_change_password, name='update_change_password'),

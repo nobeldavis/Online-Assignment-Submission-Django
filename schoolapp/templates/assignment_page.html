@@ -30,7 +30,7 @@
              {% if get_assignment %}
                 <form class=" ml-0 mb-4 mr-4" action="/deleteAssignments2" method="POST">{% csrf_token %}
                   <input name="get_course_name_cors" type="hidden" value="{{get_course_name}}">
-                  <button type="submit" class="btn btn-danger btn-lg">Delete Existing Assignments for {{get_id_course_course_name}}</button>
+                  <button type="submit" class="btn btn-danger btn-lg">Delete Existing Assignments </button>
                 </form>
               {% endif %}
               
@@ -115,16 +115,7 @@
           </tr>
           
 
-<!--          <tr>-->
-<!--            <th scope="row">Resource</th>-->
-<!--            <td>{{n.resource}}</td>-->
 
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <th scope="row">Posts</th>-->
-<!--            <td>{{n.posts}}</td>-->
-
-<!--          </tr>-->
 
         <tr>
             <th scope="row">Grade</th>
@@ -293,6 +284,12 @@
             <button class="btn btn-md btn-warning" onclick="window.print();">
               Print Grades
             </button>
+            <br><br>
+            <!-- DELTE GRADES -->
+            <form class=" ml-0 mb-4 " action="/deleteMarks" method="POST">{% csrf_token %}
+              <input name="get_course_name_cors" type="hidden" value="{{get_course_name}}">
+              <button type="submit" class="btn btn-danger btn-md">Delete Grades</button>
+            </form>
           </div>
           
               

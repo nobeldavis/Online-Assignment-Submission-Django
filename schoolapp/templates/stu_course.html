@@ -197,7 +197,7 @@
 
 
         {% if get_submit_assignment_stu %}
-        <h3 style="text-align: center;"><b>Grades</b></h3>
+        <h3 style="text-align: center;"><b>Submitted Assignments</b></h3>
         <form style="text-align: center;" action="/deleteAssignments" method="POST">
           {% csrf_token %}
                   
@@ -249,8 +249,8 @@
 
 
         {% if get_grade_of_my_grade %}
+        <h3 style="text-align: center;"><b>Grades</b></h3><br>
         {% for get_of_my_grade in get_grade_of_my_grade %}
-
         <table class="table">
           <thead>
             <tr>
