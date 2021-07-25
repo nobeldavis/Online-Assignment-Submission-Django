@@ -70,6 +70,10 @@ class Student_Submit_Assignment_pro(models.Model):
     Student_ID = models.CharField(max_length=1000)
     Assignment_name = models.CharField(max_length=1000)
     date_now = models.DateField(default=datetime.now(), blank=True)
+
+    def __str__(self):
+        return self.Student_ID
+
     
 
 
